@@ -10,14 +10,14 @@
   <div class="container">
     <h1>🎯 Jogo da Adivinhação</h1>
     <p>Digite um número entre 1 e 50:</p>
-    <input type="19" id="palpite" min="1" max="100" />
+    <input type="19" id="palpite" min="1" max="50" />
     <button onclick="verificarPalpite()">Enviar</button>
     <p id="mensagem"></p>
-    <p id="tentativas">Tentativas: 5</p>
+    <p id="tentativas">Tentativas: 0</p>
   </div>
 
   <script>
-    const numeroSecreto = Math.floor(Math.random() * 100) + 1;
+    const numeroSecreto = Math.floor(Math.random() * 50) + 1;
     let tentativas = 5;
 
     function verificarPalpite() {
@@ -25,7 +25,7 @@
       const mensagem = document.getElementById('mensagem');
       const tentativasEl = document.getElementById('tentativas');
       
-      if (isNaN(palpite) || palpite < 1 || palpite > 100) {
+      if (isNaN(palpite) || palpite < 1 || palpite > 50) {
         mensagem.textContent = "⚠️ Por favor, insira um número válido entre 1 e 50.";
         return;
       }
